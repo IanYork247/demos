@@ -1,3 +1,11 @@
+/* 
+Hello! Welcome to my collection of example SQL queries based on the schema provided in this repository. 
+This set contains 18 queries designed to demonstrate how I approach extracting and analyzing various types of data. 
+
+I prioritize using base CTEs (Common Table Expressions) for their reusability and modularity. They simplify debugging, promote readability, 
+and help maintain a clear and linear flow of logic throughout the queries.
+*/
+
 /* Query 1: Find All Active Users
 Explanation: This query retrieves all active users. It filters the users table where is_active is true and uses a CTE to modularize the logic. */
 
