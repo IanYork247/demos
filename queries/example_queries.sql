@@ -178,7 +178,6 @@ select * from base where order_rank <= 3;
 
 /* Query 17: Average Order Value by Customer
 Explanation: Calculates the average order value for each customer, using an inner join to include only customers who have placed orders. */
-
 with base as 
 (select u.id as user_id, u.first_name, u.last_name
 , avg(o.total_amount) as avg_order_value
