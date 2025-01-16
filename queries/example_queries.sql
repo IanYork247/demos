@@ -100,8 +100,8 @@ order by order_day)
 select * from base;
 
 
-/* Query 10: Percentage Contribution of Each Product to Total Revenue */
-Explanation: Shows each product's revenue and its percentage contribution to the total revenue. 
+/* Query 10: Percentage Contribution of Each Product to Total Revenue 
+Explanation: Shows each product's revenue and its percentage contribution to the total revenue. */
 
 with base as 
 (select p.name as product_name
