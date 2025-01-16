@@ -1,0 +1,2 @@
+﻿"id, user_id, order_date, status, total_amount"
+"1, 1, 2023-12-01, Completed, 1350.00 2, 3, 2023-12-05, Pending, 800.00"
