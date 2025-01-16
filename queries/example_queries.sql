@@ -77,8 +77,8 @@ select * from base;
 /* Query 8: Most Recent Order for Each Customer
 Explanation: Identifies the most recent order date for each customer, providing insights into customer recency. */
 with base as 
-(select o.user_id, max(o.order_date) as most_recent_order
-from orders o
+(select user_id, max(order_date) as most_recent_order
+from orders
 group by all)
 
 select * from base;
@@ -86,9 +86,9 @@ select * from base;
 /* Query 9: Daily Revenue Summary
 Explanation: Summarizes revenue generated on each day, sorted chronologically, enabling trend analysis.*/
 with base as 
-(select cast(o.order_date as date) as order_day
-, sum(o.total_amount) as daily_revenue
-from orders o
+(select cast(order_date as date) as order_day
+, sum(total_amount) as daily_revenue
+from orders
 group by all
 order by order_day)
 
@@ -145,10 +145,10 @@ select * from base;
 /* Query 14: Calculate Running Total of Daily Revenue
 Explanation: Computes the cumulative revenue over time, helping to track revenue trends. */
 with base as 
-(select cast(o.order_date as date) as order_day
-, sum(o.total_amount) as daily_revenue
-, sum(sum(o.total_amount)) over (order by cast(o.order_date as date)) as running_total
-from orders o
+(select cast(order_date as date) as order_day
+, sum(total_amount) as daily_revenue
+, sum(sum(total_amount)) over (order by cast(order_date as date)) as running_total
+from orders
 group by all)
 
 select * from base;
@@ -170,21 +170,19 @@ select * from base;
 /* Query 16: Top Orders by Customer with Rank
 Explanation: Lists the top 3 orders for each customer based on order amount. */
 with base as 
-(select o.user_id
-, o.id as order_id
-, o.total_amount
-, rank() over (partition by o.user_id order by o.total_amount desc) as order_rank
-from orders o)
+(select user_id, id as order_id, total_amount
+, rank() over (partition by o.user_id order by total_amount desc) as order_rank
+from orders)
 
 select * from base where order_rank <= 3;
 
 /* Query 17: Average Order Value by Customer
 Explanation: Calculates the average order value for each customer, including their rank by average value. */
 with base as 
-(select o.user_id
-, avg(o.total_amount) as avg_order_value
-, rank() over (order by avg(o.total_amount) desc) as avg_value_rank
-from orders o
+(select user_id
+, avg(total_amount) as avg_order_value
+, rank() over (order by avg(total_amount) desc) as avg_value_rank
+from orders
 group by all)
 
 select * from base;
