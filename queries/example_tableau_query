@@ -1,0 +1,82 @@
+/* Example Tableau Query: This query serves as a foundational data source for Tableau visualizations. 
+It aggregates key columns, dimensions, and metrics to provide a centralized dataset, enabling the 
+creation of comprehensive and flexible visualizations. */
+
+with orders as 
+(select o.id as order_id
+, o.user_id
+, o.order_date
+, o.total_amount
+, oi.product_id
+, oi.quantity
+, oi.price
+, case 
+  when o.total_amount > 1000 then 'High Value'
+  when o.total_amount between 500 and 1000 then 'Medium Value'
+  else 'Low Value'
+  end as order_value_category
+from orders o
+left join order_items oi on o.id = oi.order_id)
+
+, metrics as 
+(select u.id as user_id
+, u.first_name
+, u.last_name
+, u.is_active
+, sum(o.total_amount) as lifetime_value
+, count(o.order_id) as total_orders
+, avg(o.total_amount) as avg_order_value
+, max(o.order_date) as most_recent_order
+, sum(o.quantity) as total_items_sold
+, sum(o.price * o.quantity) as total_revenue
+, rank() over (order by sum(o.price * o.quantity) desc) as revenue_rank
+, ntile(4) over (order by sum(o.total_amount) desc) as lifetime_value_quartile
+, case 
+  when sum(o.total_amount) > 5000 then 'VIP Customer'
+  when sum(o.total_amount) between 1000 and 5000 then 'Regular Customer'
+  else 'New Customer'
+  end as customer_category
+from users u
+left join orders o on u.id = o.user_id
+group by all)
+
+, products as 
+(select p.id as product_id
+, p.name as product_name
+, sum(o.quantity) as total_quantity_sold
+, sum(o.price * o.quantity) as product_revenue
+, avg(o.price * o.quantity) as avg_revenue_per_sale
+, (sum(o.price * o.quantity) * 100 / sum(sum(o.price * o.quantity)) over ()) as revenue_percentage
+, case 
+  when sum(o.quantity) > 100 then 'Top Seller'
+  when sum(o.quantity) between 50 and 100 then 'Moderate Seller'
+  else 'Low Seller'
+  end as product_category
+from products p
+left join orders o on p.id = o.product_id
+group by all)
+
+select m.user_id
+, m.first_name
+, m.last_name
+, m.is_active
+, m.lifetime_value
+, m.total_orders
+, m.avg_order_value
+, m.most_recent_order
+, m.total_items_sold
+, m.total_revenue
+, m.revenue_rank
+, m.lifetime_value_quartile
+, m.customer_category
+, p.product_id
+, p.product_name
+, p.total_quantity_sold
+, p.product_revenue
+, p.avg_revenue_per_sale
+, p.revenue_percentage
+, p.product_category
+, o.order_value_category
+from metrics m
+left join orders o on m.user_id = o.user_id
+left join products p on p.product_id = o.product_id;
