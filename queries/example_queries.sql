@@ -1,5 +1,5 @@
 /* 
-Hello! Welcome to my collection of example SQL queries based on the schema provided in this repository. 
+Hello! Welcome to my collection of example SQL queries based on the schema provided in this repo. 
 This set contains 18 queries designed to demonstrate how I approach extracting and analyzing various types of data. 
 
 I prioritize using base CTEs (Common Table Expressions) for their reusability and modularity. They simplify debugging, promote readability, 
