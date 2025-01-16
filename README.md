@@ -1,6 +1,6 @@
 # Advanced SQL Problem-Solving Portfolio
 
-Hello - I'm Ian York, a passionate SQL enthusiast with experience in relational database design and complex query optimization. This repository reflects my approach to solving real-world data problems. This repository showcases my expertise in relational database design, data modeling, and advanced SQL queries. It includes schema designs, sample datasets, and SQL queries addressing real-world OLTP and OLAP scenarios.
+Hello – I'm Ian York, a passionate SQL enthusiast with extensive experience in relational database design and advanced query optimization. This repository highlights my approach to solving real-world data challenges through thoughtful database design, data modeling, and complex SQL queries. It features schema designs, sample datasets, and SQL solutions that demonstrate my ability to extract insights and build scalable, efficient data workflows.
 
 ## Repository Structure
 
