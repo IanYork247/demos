@@ -6,6 +6,7 @@ Hello - I'm Ian York, a passionate SQL enthusiast with experience in relational 
 
 - **`schemas/`**
   - Contains the SQL script `schema.sql` to create the database schema, including tables for users, products, orders, and order items.
+  - Contains an ERD visualization of the database schema
 
 - **`data/`**
   - Includes sample datasets in CSV format:
@@ -17,9 +18,7 @@ Hello - I'm Ian York, a passionate SQL enthusiast with experience in relational 
 
 - **`queries/`**
   - Example SQL queries that solve practical problems and demonstrate advanced SQL techniques like joins, aggregations, and window functions.
-
-- **`explanations/`**
-  - Markdown files explaining the purpose and logic behind the SQL queries.
+  - Example query to utilize as the base for a Tableau data source.
 
 ## How to Set Up
 
