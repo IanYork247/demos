@@ -1,7 +1,7 @@
 # Portfolio
 
 Hello – I'm Ian York, a passionate SQL enthusiast with extensive experience in relational database design and advanced query optimization. This repository showcases expertise in SQL (data modeling, problem-solving with schema designs, real-world queries) with Python projects to be showcased in the near future. 
-git 
+
 ## Repository Structure
 
 - **`sql/`**
