@@ -1,10 +1,10 @@
 # Advanced SQL Problem-Solving Portfolio
 
 Hello – I'm Ian York, a passionate SQL enthusiast with extensive experience in relational database design and advanced query optimization. This repository showcases expertise in SQL, data modeling,  problem-solving with schema designs, real-world queries, and Python projects
-
+git 
 ## Repository Structure
 
-- **`schemas/`**
+- **`sql_schemas/`**
   - Contains the SQL script `schema.sql` to create the database schema, including tables for users, products, orders, and order items.
   - Contains an ERD visualization of the database schema
 
@@ -16,7 +16,7 @@ Hello – I'm Ian York, a passionate SQL enthusiast with extensive experience in
     - `order_items.csv`: Example order item data.
   - Use the `sql_data/insert_data.sql` file to populate the database with these datasets.
 
-- **`queries/`**
+- **`sql_queries/`**
   - Example SQL queries that solve practical problems and demonstrate advanced SQL techniques like joins, aggregations, and window functions.
   - Example query to utilize as the base for a Tableau data source.
 
@@ -25,4 +25,4 @@ Hello – I'm Ian York, a passionate SQL enthusiast with extensive experience in
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/IanYork247/demos
-   cd SQL-Schema-Demo
+   cd demos
