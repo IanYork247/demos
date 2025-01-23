@@ -1,6 +1,8 @@
 # Portfolio
 
-Hello – I'm Ian York, a passionate SQL enthusiast with extensive experience in relational database design and advanced query optimization. This repository showcases expertise in SQL (data modeling, problem-solving with schema designs, real-world queries) with Python projects to be showcased in the near future. 
+Hello, I'm Ian York. I'm a passionate SQL enthusiast with deep expertise in relational database design, advanced query optimization, and data-driven problem-solving. This repository highlights my proficiency in SQL, including data modeling, schema design, and crafting efficient, real-world queries. It also features projects leveraging Python for data analysis and visualization.
+
+Stay tuned for more projects as I continue to expand this collection.
 
 ## Repository Structure
 
@@ -21,6 +23,14 @@ Hello – I'm Ian York, a passionate SQL enthusiast with extensive experience in
   - **`sql_queries/`**
     - Example SQL queries that solve practical problems and demonstrate advanced SQL techniques like joins, aggregations, and window functions.
     - Example query to utilize as the base for a Tableau data source.
+
+- **`python/`**
+
+  - **`notebooks\.ipynb_checkpoints/`**
+    - Contains 'Introduction to Exploratory Data Analysis: Used Car Pricing'
+  
+  - **`python_data/`**
+    - Includes sample dataset in CSV format used for Exploratory Data Analysis: Used Car Pricing
 
 ## How to Set Up
 
