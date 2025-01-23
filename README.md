@@ -26,7 +26,7 @@ Stay tuned for more projects as I continue to expand this collection.
 
 - **`python/`**
 
-  - **`notebooks\.ipynb_checkpoints/`**
+  - **`notebooks/`**
     - Contains 'Introduction to Exploratory Data Analysis: Used Car Pricing'
   
   - **`python_data/`**
