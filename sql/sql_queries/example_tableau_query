@@ -1,6 +1,13 @@
-/* Example Tableau Query: This query serves as a foundational data source for Tableau visualizations. 
+/* 
+
+Example Tableau Query: This query serves as a foundational data source for Tableau visualizations. 
 It aggregates key columns, dimensions, and metrics to provide a centralized dataset, enabling the 
-creation of comprehensive and flexible visualizations. */
+creation of comprehensive and flexible visualizations. 
+
+Please refer to this schema for the purpose of evaluating this query
+https://github.com/IanYork247/demos/blob/main/sql/sql_schema/schema.sql
+
+*/
 
 with orders as 
 (select o.id as order_id
@@ -79,4 +86,4 @@ select m.user_id
 , o.order_value_category
 from metrics m
 left join orders o on m.user_id = o.user_id
-left join products p on p.product_id = o.product_id;
+left join products p on p.product_id = o.product_id
